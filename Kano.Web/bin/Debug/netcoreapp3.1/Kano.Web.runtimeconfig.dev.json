@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\ENGGAR\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ENGGAR\\.nuget\\packages"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+﻿
+
+<script src="~/script/home/Index.js" asp-append-version="true"></script>
+<script type="text/javascript" asp-append-version="true">
+    var urlGetData = "@Url.Action("GetListData", "Home")";
+    var urlDetail = "@Url.Action("Detail","Home")";
+</script>
+
+<style>
+    table#dataHome {
+        table-layout: fixed;
+    }
+</style>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    @*<h4 class="mb-0 font-size-18">Companies</h4>*@
+
+                    <div class="page-title-left">
+                        <a href="@Url.Action("Create","Home")" class="btn btn-primary waves-effect waves-light">
+                            <i class="bx bx-plus-circle font-size-16 align-middle mr-2"></i>
+                            Add Company
+                        </a>
+                    </div>
+                    <h4 class="mb-0 font-size-18">Companies</h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="dataHome" class="table table-centered table-nowrap mb-0 clean-table">
+                            <thead class="thead-light">
+
+                            </thead>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

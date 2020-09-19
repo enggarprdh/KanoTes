@@ -1,0 +1,237 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model DataAccess.Model.Company;
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <div class="page-title-left">
+                        <a href="@Url.Action("Index","Home")" class="btn btn-outline-primary waves-effect waves-light">
+                            <i class="bx bx-arrow-back font-size-16 align-middle mr-2"></i>
+                            Back
+                        </a>
+                    </div>
+                    <h4 class="mb-0 font-size-18">Create</h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">ROE FY14 VS FY15</h4>
+                        <canvas id="pieTes" height="260"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Revenue & RWA FY14 VS FY15</h4>
+                        <canvas id="barTes" height="260"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        garis
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        batang horizontal
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form action="@Url.Action("Save","Home")" method="post">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <div class="page-title-left">
+                            <button class="btn btn-primary pull-right" type="submit"><i class="bx bx-save font-size-16 align-middle mr-2"></i>Save</button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group position-relative">
+                                <label for="CMGUnmaskedID">CMGUnmaskedID</label>
+                                <input asp-for="CMGUnmaskedID" type="text" class="form-control" id="CMGUnmaskedID" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="CMGUnmaskedName">CMGUnmaskedName</label>
+                                <input asp-for="CMGUnmaskedName" type="text" class="form-control" id="CMGUnmaskedName" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="ClientTier">ClientTier</label>
+                                <input asp-for="ClientTier" type="text" class="form-control" id="ClientTier" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="GCPStream">GCPStream</label>
+                                <input asp-for="GCPStream" type="text" class="form-control" id="GCPStream" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="GCPBusiness">GCPBusiness</label>
+                                <input asp-for="GCPBusiness" type="text" class="form-control" id="GCPBusiness" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="CMGGlobalBU">CMGGlobalBU</label>
+                                <input asp-for="CMGGlobalBU" type="text" class="form-control" id="CMGGlobalBU" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="CMGSegmentName">CMGSegmentName</label>
+                                <input asp-for="CMGSegmentName" type="text" class="form-control" id="CMGSegmentName" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="GlobalControlPoint">GlobalControlPoint</label>
+                                <input asp-for="GlobalControlPoint" type="text" class="form-control" id="GlobalControlPoint" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="GCPGeography">GCPGeography</label>
+                                <input asp-for="GCPGeography" type="text" class="form-control" id="GCPGeography" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="GlobalRelationshipManagerName">GlobalRelationshipManagerName</label>
+                                <input asp-for="GlobalRelationshipManagerName" type="text" class="form-control" id="GlobalRelationshipManagerName" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group position-relative">
+                                <label for="Deposits_EOP_FY14">Deposits_EOP_FY14</label>
+                                <input asp-for="Deposits_EOP_FY14" type="text" onkeypress="return onlyNumberKey(event);" class="form-control add-thspr" id="Deposits_EOP_FY14" />
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="roefy14">ROE FY14</label>
+                                <input asp-for="ROE_FY14" type="text" onkeypress="return onlyNumberKey(event);" class="form-control add-thspr" id="ROE_FY14" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="revenuefy14">REVENUE FY14</label>
+                                <input asp-for="REVENUE_FY14" type="text" onkeypress="return onlyNumberKey(event);" class="form-control add-thspr" id="revenuefy14" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="rwafy14">RWAFY14</label>
+                                <input asp-for="RWAFY14" type="text" onkeypress="return onlyNumberKey(event);" class="form-control add-thspr" id="rwafy14" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="totallimitfy14">TotalLimits EOP FY14</label>
+                                <input asp-for="TotalLimits_EOP_FY14" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="totallimitfy14" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="comavgfy14">Com Avg Act FY14</label>
+                                <input asp-for="Company_Avg_Activity_FY14" type="text" onkeypress="return onlyNumberKey(event);" class="form-control add-thspr" id="comavgfy14" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="REV_RWA_FY14">REV_RWA_FY14</label>
+                                <input asp-for="REV_RWA_FY14" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="REV_RWA_FY14" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="NPAT_AllocEq_FY14">NPAT_AllocEq_FY14</label>
+                                <input asp-for="NPAT_AllocEq_FY14" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="NPAT_AllocEq_FY14" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group position-relative">
+                                <label for="Deposits_EOP_FY15x">Deposits_EOP_FY15x</label>
+                                <input asp-for="Deposits_EOP_FY15x" type="text" onkeypress="return onlyNumberKey(event);" class="form-control add-thspr" id="Deposits_EOP_FY15x" />
+                            </div>
+                            <div class="form-group position-relative">
+                                <label for="roefy15">ROE FY15</label>
+                                <input asp-for="ROE_FY15" type="text" onkeypress="return onlyNumberKey(event);" class="form-control add-thspr" id="ROE_FY15" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="revenuefy15">REVENUE FY15</label>
+                                <input asp-for="REVENUE_FY15" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="revenuefy15" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="rwafy15">RWAFY15</label>
+                                <input asp-for="RWAFY15" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="rwafy15" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="totallimitfy15">TotalLimits EOP FY15</label>
+                                <input asp-for="TotalLimits_EOP_FY15" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="totallimitfy15" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="comavgfy15">Com Avg Act FY15</label>
+                                <input asp-for="Company_Avg_Activity_FY15" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="comavgfy15" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="REV_RWA_FY15">REV_RWA_FY15</label>
+                                <input asp-for="REV_RWA_FY15" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="REV_RWA_FY15" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="NPAT_AllocEq_FY15X">NPAT_AllocEq_FY15X</label>
+                                <input asp-for="NPAT_AllocEq_FY15X" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="NPAT_AllocEq_FY15X" />
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="TotalLimits_EOP_FY15x">TotalLimits_EOP_FY15x</label>
+                                <input asp-for="TotalLimits_EOP_FY15x" onkeypress="return onlyNumberKey(event);" type="text" class="form-control add-thspr" id="TotalLimits_EOP_FY15x" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script src="~/script/home/Detail.js" asp-append-version="true"></script>

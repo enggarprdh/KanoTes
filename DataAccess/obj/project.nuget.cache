@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Rp16fnjBhQ4Kju9D7lGt2lHGB2ExzLYV568xBZnMN+/N8ntfifA2bo6yWr6v1WaS2b4F0J2jI0x31bKp3Yu9fw==",
+  "success": true,
+  "projectFilePath": "D:\\Project\\Github\\KanoTes\\DataAccess\\DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ENGGAR\\.nuget\\packages\\csvhelper\\15.0.5\\csvhelper.15.0.5.nupkg.sha512",
+    "C:\\Users\\ENGGAR\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
